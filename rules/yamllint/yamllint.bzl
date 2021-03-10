@@ -11,7 +11,7 @@ def _yamllint_test_implementation(ctx):
         output = ctx.outputs.bin,
         content = "\n".join([
             "#!/usr/bin/env bash",
-            "{yamllint} $(< {args_file})",
+            "LANG=en_US.UTF-8 {yamllint} $(< {args_file})",
         ]).format(
             yamllint = yamllint.short_path,
             args_file = args_file.short_path,
